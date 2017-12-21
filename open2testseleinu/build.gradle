@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+repositories {
+
+      flatDir {
+       dirs 'libs'
+   }
+}
+
+dependencies {
+
+  compile fileTree(dir: 'libs', include: '*.jar')
+
+	testCompile  files('libs/selenium-server-standalone-3.8.1.jar')
+    testCompile 'junit:junit:4.12'
+	
+}
+
+defaultTasks 'cleanTest','test'
+
+
